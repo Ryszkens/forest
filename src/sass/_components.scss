@@ -1,0 +1,1248 @@
+@use "./colors" as *;
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.6rem;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	z-index: 10;
+
+	.hamburger {
+		border: 1px solid transparent;
+		padding: 1rem 2rem;
+		z-index: 100;
+	}
+
+	.nav-mobile {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		text-decoration: none;
+		background-color: rgb(167, 194, 171);
+		transform: translateX(100%);
+		transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+		.mobile-list {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			list-style: none;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 1em;
+			font-size: 2.5rem;
+			margin-bottom: 1em;
+			color: black;
+		}
+	}
+
+	.nav-mobile.active {
+		transform: translateX(0);
+	}
+
+	.left-section {
+		display: flex;
+		margin-left: 1em;
+		font-size: 2.5rem;
+
+		.navbar-logo {
+			margin-right: 0.5em;
+
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-decoration: none;
+				color: black;
+
+				.fa-solid {
+					margin-right: 0.4em;
+				}
+			}
+		}
+	}
+
+	.nav-desktop {
+		display: none;
+		margin: 0 2em;
+		margin-right: 30px;
+
+		ul li {
+			display: inline;
+			margin-right: 30px;
+			list-style: none;
+			font-size: 1.4rem;
+			height: 100%;
+		}
+
+		a {
+			text-decoration: none;
+			padding: 2em 1em;
+			color: black;
+		}
+
+		a:hover {
+			color: white;
+			background-color: black;
+		}
+
+		.active {
+			color: $green;
+		}
+	}
+}
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
+
+// HEADER
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	width: 100%;
+	padding: 2em;
+	background-image: url("../img/jungle-g54190170d_640.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	// p {
+	// 	font-weight: 100;
+	// 	font-size: 1.6em;
+	// 	text-align: start;
+	// 	margin-bottom: 10px;
+	// }
+	.hero-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0, 0, 0, 0.7);
+	}
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		margin-top: 4em;
+		color: #fff;
+		font-weight: 100;
+		font-size: 2rem;
+		z-index: 1;
+
+		h1 {
+			font-weight: 600;
+			font-size: 2.1rem;
+			margin-top: 0.3em;
+			line-height: 1.5em;
+		}
+	}
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	color: black;
+	margin-bottom: 1em;
+	margin-top: 1em;
+
+	.wrapper {
+		margin: 0 auto;
+
+		max-width: 1200px;
+		color: #000;
+	}
+
+	.section-heading {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		font-weight: 100;
+		margin-top: 1.3em;
+	}
+
+	.img-section {
+		margin: 20px auto;
+		width: 50vh;
+		height: 40vh;
+		background-image: url("../img/waters-gd0ba3f616_640.jpg");
+		background-size: cover;
+		background-position: center;
+	}
+
+	.text-section {
+		color: rgb(90, 89, 89);
+		padding: 0.5em 1.5em;
+		margin-right: 2em;
+
+		text-align: center;
+		font-size: 0.9em;
+		line-height: 2.4rem;
+
+		.text-title {
+			text-align: center;
+			margin-bottom: 1em;
+			color: black;
+		}
+	}
+
+	// &:nth-child(odd) {
+	// 	background-color: #fff;
+	// }
+
+	// &:last-of-type {
+	// 	height: 200px;
+	// 	background-color: aqua;
+	// }
+
+	.offert-section {
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+
+		p {
+			margin: 1.2em;
+			text-align: center;
+		}
+
+		.link-offerts {
+			a {
+				text-decoration: none;
+				text-transform: uppercase;
+				color: green;
+				font-weight: bold;
+			}
+		}
+
+		.cards {
+			width: 80%;
+			margin: 1em auto;
+
+			.card-box {
+				display: flex;
+				flex-direction: column;
+				margin: 2em auto;
+				padding: 1em;
+				width: 80%;
+				font-size: 1.3rem;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+				border-radius: 5px;
+				transition: scale 0.3s;
+
+				.card-title {
+					text-align: center;
+					font-size: 1.5em;
+					padding-bottom: 0.1em;
+					margin-bottom: 0.2em;
+				}
+
+				.card-price {
+					font-size: 1.8em;
+					font-weight: bold;
+					margin-top: 0.2em;
+					margin-bottom: 0.5em;
+				}
+				.choose {
+					display: flex;
+					margin-top: auto;
+					margin-left: auto;
+					margin-right: auto;
+					padding: 1em 3em;
+					justify-content: center;
+					width: 60%;
+					height: 50px;
+					align-items: center;
+					font-size: 1.2em;
+					background-color: white;
+					// background-color: rgba(155, 232, 159, 0.611);
+					border: 1px solid transparent;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+					border-radius: 5px;
+					transition: background-color 0.3s;
+				}
+
+				.choose:hover {
+					background-color: rgba(148, 244, 148, 0.754);
+				}
+
+				.card-list {
+					margin-bottom: 2em;
+					.fa-check {
+						color: rgb(117, 233, 117);
+						margin-right: 0.8em;
+					}
+
+					.fa-minus {
+						color: rgb(84, 79, 79);
+						margin-right: 0.8em;
+					}
+				}
+			}
+			.card-box:hover {
+				scale: 1.05;
+			}
+		}
+	}
+}
+
+.adventure-box {
+	position: relative;
+	width: 100%;
+	height: 30vh;
+	margin-top: 2em;
+	background-image: url("../img/girl-gf8bfc7a34_640.jpg");
+	background-size: cover;
+	background-position: center;
+
+	.adventure-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0, 0, 0, 0.5);
+	}
+
+	.adventure-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 70%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		padding: 1em 2em;
+		font-size: 1.6rem;
+		color: white;
+		border: 1px solid white;
+	}
+}
+
+// FOOTER
+
+.footer {
+	background-color: rgba(247, 247, 247, 0.803);
+	// height: 50vh;
+	.footer-info {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		justify-content: space-evenly;
+		align-items: center;
+
+		.footer-logo {
+			display: flex;
+			margin-bottom: 1.2em;
+			justify-content: center;
+			margin-top: 1.2em;
+			font-size: 2.4rem;
+
+			a {
+				display: flex;
+				color: black;
+				text-decoration: none;
+
+				.fa-tree {
+					margin-right: 0.4em;
+				}
+			}
+		}
+
+		.footer-boxes {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			padding: 2em;
+			padding-top: 0;
+
+			.footer-box {
+				padding-bottom: 1em;
+
+				h3 {
+					margin-bottom: 0.3em;
+				}
+				p {
+					padding: 0.1em;
+				}
+			}
+		}
+	}
+
+	.footer-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+
+		.footer-year {
+			padding-left: 0.2em;
+			padding-right: 0.4em;
+		}
+	}
+}
+
+// cntact
+
+.sections {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-top: 2em;
+	background-image: url("../img/jungle-g54190170d_640.jpg");
+	background-size: cover;
+	background-position: center;
+
+	h2 {
+		color: #fff;
+		z-index: 100;
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	.hero-sections {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0, 0, 0, 0.8);
+	}
+
+	.contact-map {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 2em auto;
+		padding: 1em;
+		width: 90%;
+		height: 70%;
+		z-index: 5;
+
+		h2 {
+			padding: 2em;
+			color: #fff;
+		}
+
+		.map-img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	.contact-form {
+		position: relative;
+		justify-content: center;
+		margin: 0.2em auto;
+		width: 80%;
+		font-size: 1.6rem;
+		z-index: 1;
+
+		h2 {
+			font-size: 2rem;
+			text-align: center;
+			padding: 1em;
+			color: #fff;
+		}
+
+		.form-box {
+			display: flex;
+			flex-direction: column;
+			text-align: start;
+			color: #fff;
+			padding: 0.5em;
+
+			label {
+				display: inline-block;
+				margin-bottom: 0.7em;
+			}
+
+			input {
+				width: 100%;
+				padding: 0.3em;
+			}
+
+			textarea {
+				resize: horizontal;
+			}
+
+			.error-text {
+				margin: 0.2em;
+				font-size: 1.5rem;
+				color: rgb(244, 136, 136);
+				visibility: hidden;
+			}
+		}
+		.form-box.error input {
+			border: 1px solid red;
+			background-color: #f2c3c3;
+		}
+		.form-box.error textarea {
+			border: 1px solid rgb(236, 111, 111);
+			background-color: #f2c3c3;
+		}
+
+		.form-box.error .error-text {
+			visibility: visible;
+		}
+
+		.form-buttons {
+			display: flex;
+			justify-content: center;
+			margin: 2em auto;
+			.btn {
+				padding: 1em 2em;
+				margin-right: 1em;
+				font-size: 1.5rem;
+				border: 1px solid black;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
+
+			.btn:hover {
+				background-color: rgba(148, 244, 148, 0.754);
+			}
+		}
+
+		.popup {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			position: absolute;
+			top: -600px;
+
+			width: 100%;
+			height: 200px;
+			margin: 2em auto;
+			background-color: #ffffff;
+			border-radius: 8px;
+			border: 2px solid black;
+			transition: top 0.5s;
+
+			p {
+				font-size: 1.8rem;
+				margin-bottom: 2em;
+			}
+
+			.close {
+				font-size: 1.6rem;
+				padding: 1em 2em;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+
+			.close:hover {
+				background-color: rgba(148, 244, 148, 0.754);
+			}
+		}
+
+		.popup.show-popup {
+			top: 00px;
+		}
+	}
+}
+
+.contact-data {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.661);
+	height: 29%;
+	padding: 2em;
+	font-size: 1.8rem;
+	color: $green;
+	z-index: 1;
+
+	.contact-title {
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
+
+	p.data {
+		flex-direction: row;
+		justify-content: center;
+		text-align: left;
+		color: black;
+		margin-bottom: 1em;
+
+		i {
+			margin-right: 0.6em;
+		}
+	}
+}
+
+// PAGE offert
+.page-offert.page-offert {
+	margin-top: 7em;
+	background-color: rgba(247, 247, 247, 0.803);
+	width: 95%;
+	margin: 6em auto;
+
+	// .page-offert {
+	// 	margin-top: 7em;
+	// 	position: relative;
+
+	.cards {
+		position: relative;
+
+		background-image: url("../img/waters-gd0ba3f616_640.jpg");
+		background-size: cover;
+		background-position: center;
+
+		.cards-shadow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+			z-index: 1;
+		}
+
+		.card-box {
+			position: relative;
+			background-color: #fff;
+			padding: 2em;
+			z-index: 5;
+
+			.img-offert {
+				margin: 20px auto;
+				width: 90%;
+				height: 15vh;
+				background-size: cover;
+				background-position: center;
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+			}
+
+			.img-demo {
+				background-image: url("../img/tent-g3b9f55333_640.jpg");
+			}
+			.img-standard {
+				background-image: url("../img/cycling-ge0c626ef0_640.jpg");
+			}
+			.img-premium {
+				background-image: url("../img/canoe-g094235d7c_640.jpg");
+			}
+		}
+	}
+}
+
+// media
+
+@media (min-width: 768px) {
+	nav {
+		.left-section {
+			font-size: 2.7rem;
+			.navbar-logo {
+				margin-right: 1em;
+			}
+		}
+
+		.nav-list {
+			display: flex;
+			margin: 0 2em;
+			margin-right: 2em;
+
+			a {
+				font-size: 1.8rem;
+			}
+		}
+
+		.nav-list.nav-mobile {
+			display: none;
+		}
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	header {
+		.hero-text {
+			font-weight: 100;
+			font-size: 2.4rem;
+
+			h1 {
+				font-size: 3.2rem;
+			}
+		}
+	}
+
+	.section {
+		display: flex;
+
+		.section-heading {
+			margin-top: 3.4em;
+			font-size: 3rem;
+		}
+
+		.offert-section {
+			p {
+				margin: 1.7em;
+			}
+			.cards {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 90%;
+				background-color: rgb(255, 255, 255);
+
+				.card-box {
+					display: flex;
+					margin: 2em auto;
+					width: 28%;
+
+					.card-title {
+						font-size: 1.5em;
+						padding-bottom: 0.1em;
+						margin-bottom: 0.2em;
+					}
+
+					.card-price {
+						font-size: 1.8em;
+						margin-top: 0.2em;
+						margin-bottom: 0.5em;
+					}
+
+					.choose {
+						cursor: pointer;
+						transition: background-color 0.3s;
+					}
+					.choose:hover {
+						background-color: rgba(148, 244, 148, 0.754);
+					}
+				}
+			}
+		}
+	}
+
+	.adventure-box {
+		background-image: url("../img/girl-g6e4b362ea_1280.jpg");
+		.adventure-text {
+			padding: 1em 2em;
+			width: 80%;
+			font-size: 2rem;
+			color: white;
+			border: 1px solid white;
+		}
+	}
+
+	.sections {
+		flex-direction: row;
+
+		height: 90vh;
+		background-image: url("../img/jungle-ga807e151e_1280.jpg");
+
+		.contact-map {
+			margin-top: 2em;
+			margin-left: 3em;
+			width: 70vh;
+			height: 70vh;
+		}
+
+		.contact-form {
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			font-size: 1.4rem;
+
+			margin-top: 3em;
+			z-index: 5;
+
+			.form {
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+				margin-top: 2em;
+				height: 70vh;
+				width: 70%;
+			}
+
+			h2 {
+				font-size: 2rem;
+				text-align: start;
+				color: #fff;
+				// padding: 2em;
+			}
+
+			.form-box {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+				text-align: start;
+				color: #fff;
+				padding: 0.5em;
+				width: 100%;
+
+				label {
+					margin-bottom: 0.4em;
+				}
+
+				input {
+					width: 100%;
+					padding: 0.3em;
+				}
+				textarea {
+					width: 100%;
+				}
+			}
+
+			.form-buttons {
+				display: flex;
+				justify-content: center;
+				margin: 1em auto;
+
+				.btn {
+					padding: 1em 2em;
+					margin-right: 1em;
+					font-size: 1.5rem;
+					border: 1px solid black;
+					border-radius: 5px;
+					cursor: pointer;
+				}
+			}
+			.popup {
+				position: absolute;
+				width: 300px;
+				height: 200px;
+				margin: 2em auto;
+				background-color: #fff;
+				border-radius: 8px;
+				border: 2px solid black;
+				transition: top 0.5s;
+
+				p {
+					font-size: 2rem;
+					padding: 1em 2em;
+					margin-bottom: 0;
+				}
+
+				.close {
+					font-size: 1.6rem;
+					padding: 1em 2em;
+					margin-bottom: 1em;
+				}
+			}
+		}
+	}
+
+	.page-offert.page-offert {
+		margin-top: 7em;
+		background-color: rgba(247, 247, 247, 0.803);
+		position: relative;
+
+		.heading-title {
+			font-size: 2rem;
+		}
+
+		.cards {
+			background-image: url("../img/waters-gd0ba3f616_640.jpg");
+			background-size: cover;
+			background-position: center;
+
+			.card-box {
+				display: flex;
+				flex-wrap: wrap;
+				width: 40%;
+				background-color: #fff;
+				padding: 2em;
+				z-index: 1;
+
+				.img-offert {
+					margin: 20px auto;
+					width: 95%;
+					height: 15vh;
+
+					background-size: cover;
+					background-position: center;
+					border-radius: 8px;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+				}
+
+				.img-demo {
+					background-image: url("../img/tent-g3b9f55333_640.jpg");
+				}
+				.img-standard {
+					background-image: url("../img/cycling-ge0c626ef0_640.jpg");
+				}
+				.img-premium {
+					background-image: url("../img/canoe-g094235d7c_640.jpg");
+				}
+			}
+			.link-offerts {
+				background-color: #fff;
+				padding: 1em;
+			}
+		}
+	}
+}
+
+.footer {
+	background-color: rgba(247, 247, 247, 0.803);
+	.footer-info {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		.footer-logo {
+			display: flex;
+
+			a {
+				display: flex;
+				text-decoration: none;
+			}
+		}
+
+		.footer-boxes {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	header {
+		height: 40vh;
+		background-image: url("../img/jungle-ga807e151e_1280.jpg");
+
+		.hero-text {
+			font-weight: 100;
+			font-size: 1.6rem;
+
+			h1 {
+				font-size: 2.4rem;
+			}
+		}
+	}
+	nav {
+		.left-section {
+			font-size: 3rem;
+			.navbar-logo {
+				margin-left: 1em;
+			}
+		}
+
+		.nav-list {
+			display: flex;
+			margin: 0 2em;
+			margin-right: 30px;
+
+			a {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.section {
+		margin-bottom: 2em;
+
+		.section-heading {
+			margin-top: 2.7em;
+			margin-bottom: 1em;
+			font-size: 3.4rem;
+		}
+
+		.content-section {
+			display: flex;
+			margin-left: 2em;
+
+			.img-section {
+				justify-content: center;
+				margin: 20px auto;
+				width: 770px;
+				height: 60vh;
+
+				background-image: url("../img/waters-gab54531a2_1280.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+
+			.text-section {
+				width: 50%;
+				color: black;
+				padding: 1.5em 2em;
+				line-height: 2.4em;
+				justify-content: center;
+				align-items: center;
+				text-align: left;
+
+				.text-title {
+					justify-content: center;
+					text-align: center;
+					font-size: 1.6em;
+					margin-bottom: 1em;
+				}
+			}
+		}
+
+		.adventure-text {
+			padding: 1em 2em;
+			width: 80%;
+			font-size: 3.4rem;
+			color: white;
+			border: 1px solid white;
+			z-index: 100;
+		}
+	}
+
+	.sections {
+		flex-direction: row;
+		height: 100vh;
+		background-image: url("../img/jungle-ga807e151e_1280.jpg");
+
+		.contact-map {
+			margin-top: 3em;
+			margin-left: 3em;
+			width: 80vh;
+			height: 70vh;
+		}
+
+		.contact-form {
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			font-size: 1.4rem;
+			margin-top: 3em;
+			width: 100%;
+
+			.form {
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+				margin-top: 3em;
+				height: 70vh;
+			}
+
+			h2 {
+				font-size: 2rem;
+				text-align: start;
+				color: #fff;
+				// padding: 2em;
+			}
+
+			.form-box {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+				text-align: start;
+				color: #fff;
+				padding: 0.5em;
+				width: 100%;
+
+				label {
+					margin-bottom: 1.2em;
+				}
+
+				input {
+					width: 100%;
+					padding: 0.5em;
+				}
+				textarea {
+					padding: 0.5em;
+				}
+			}
+
+			.form-buttons {
+				display: flex;
+				justify-content: center;
+				margin: 2em auto;
+
+				.btn {
+					padding: 1em 2em;
+					margin-right: 1em;
+					font-size: 1.8rem;
+					border: 1px solid black;
+					border-radius: 5px;
+					cursor: pointer;
+				}
+			}
+
+			.popup {
+				width: 500px;
+				p {
+					margin-top: 3em;
+					margin-bottom: 0;
+					font-size: 2.2rem;
+				}
+				.close {
+					margin-bottom: 4em;
+				}
+			}
+		}
+	}
+
+	.page-offert.page-offert {
+		.cards {
+			.card-box {
+				display: flex;
+				width: 25%;
+				margin: 2em auto;
+				padding: 1em;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	nav {
+		.left-section {
+			font-size: 4rem;
+			.navbar-logo {
+				margin-right: 1.5em;
+			}
+		}
+
+		.nav-list {
+			display: flex;
+			margin: 0 2em;
+			margin-right: 2em;
+
+			a {
+				font-size: 2.2rem;
+			}
+		}
+	}
+	header {
+		height: 60vh;
+		.hero-text {
+			font-size: 3rem;
+
+			h1 {
+				font-size: 3.4rem;
+			}
+		}
+	}
+
+	.section {
+		margin-bottom: 2em;
+
+		.section-heading {
+			margin-top: 3.5em;
+			margin-bottom: 1em;
+			font-size: 3.4rem;
+		}
+	}
+
+	.adventure-box {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1200px;
+	}
+	.sections {
+		.contact-map {
+			width: 100vh;
+		}
+
+		.contact-form {
+			.form {
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+				margin-top: 3em;
+				height: 70vh;
+			}
+
+			h2 {
+				font-size: 2rem;
+				text-align: start;
+				color: #fff;
+				// padding: 2em;
+			}
+
+			.form-box {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+				text-align: start;
+				color: #fff;
+				font-size: 1.6rem;
+				padding: 0.5em;
+				width: 100%;
+
+				label {
+					margin-bottom: 0.4em;
+				}
+			}
+
+			.form-buttons {
+				display: flex;
+				justify-content: center;
+				margin: 2em auto;
+
+				.btn {
+					padding: 1em 2em;
+					margin-right: 1em;
+					font-size: 1.5rem;
+					border: 1px solid black;
+					border-radius: 5px;
+					cursor: pointer;
+				}
+			}
+
+			.popup {
+				width: 600px;
+
+				p {
+					font-size: 2.6rem;
+				}
+			}
+		}
+	}
+
+	.page-offert.page-offert {
+		.cards {
+			.card-box {
+				display: flex;
+				width: 30%;
+				margin: 2em auto;
+
+				.card-list {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}

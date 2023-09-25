@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Group - formularz kontaktowy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dist/css/hamburger.min.css">
+<link rel="stylesheet" href="dist/css/style.min.css">
+<script src="https://kit.fontawesome.com/9d68a4b787.js" crossorigin="anonymous"></script></head>
+
+<body>
+
+    <nav class="navbar">
+
+    <div class="left-section">
+        <div class="navbar-logo">
+            <a href="index.html#home"><i class="fa-solid fa-tree"></i>
+                <p>Forest</p>
+            </a>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+
+    <button class="hamburger" class="hamburger--spin" type="button">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+
+    <div class="nav-list nav-desktop">
+        <ul>
+            <li class="list-item"><a href="index.html#home" class="active">Home</a></li>
+            <li class="list-item"><a href="index.html#section-1">O nas</a></li>
+            <li class="list-item"><a href="index.html#section-2">Oferta</a></li>
+            <li class="list-item"><a href="contact.html" class="contact">Kontakt</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-list nav-mobile ">
+        <ul class="mobile-list">
+            <li class="list-item"><a href="index.html#home" class="active">Home</a></li>
+            <li class="list-item"><a href="index.html#section-1">O nas</a></li>
+            <li class="list-item"><a href="index.html#section-2">Oferta</a></li>
+            <li class="list-item"><a href="contact.html" class="contact">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+    <main>
+
+        <div class="sections">
+            <div class="hero-sections"></div>
+
+
+            <div class="contact-map">
+                <h2>Tutaj jesteśmy!</h2>
+                <iframe class="map-img"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.89823392774!2d19.89026927653591!3d50.08819217152519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1691083713247!5m2!1spl!2spl"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!-- width="300" height="450"  -->
+            <div class="contact-form">
+                <form class="form">
+                    <h2>Napisz do nas!</h2>
+                    <div class="form-box">
+                        <label for="username">imię i nazwisko:</label>
+                        <input type="text" id="username" placeholder="Wpisz imię i nazwisko">
+
+
+                        <p class="error-text">error</p>
+                    </div>
+                    <div class="form-box">
+                        <label for="mail">adres email</label>
+                        <input type="email" id="mail" placeholder="Wpisz e-mail">
+                        <p class="error-text">error</p>
+                    </div>
+                    <div class="form-box">
+                        <label for="phone-number">numer telefonu</label>
+                        <input type="number" id="phone-number" placeholder="Wpisz nr tel">
+                        <p class="error-text">error</p>
+                    </div>
+                    <div class="form-box">
+                        <label for="text-content">Wpisz treść</label>
+                        <textarea name="" id="text-content" cols="30" rows="10" placeholder="Wpisz tekst"></textarea>
+
+                        <p class="error-text">error</p>
+                    </div>
+
+
+                    <div class="form-buttons">
+                        <button class="btn clear">Wyczyść</button>
+                        <button class="btn send">Wyślij</button>
+                    </div>
+                    <div class="popup">
+                        <p>Formularz został poprawnie wysłany</p>
+                        <button class="close">Zamknij</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+        </div>
+
+        <div class="contact-data">
+            <p class="contact-title">Zapraszamy do kontaktu</p>
+
+            <p class="data email"><i class="fa-solid fa-envelope"></i> forest@forestcompany.pl</p>
+            <p class="data phone"><i class="fa-solid fa-phone"></i> 678 677 888 </p>
+
+        </div>
+    </main>
+
+    <footer class="footer section">
+    <div class="footer-info">
+
+        <div class="footer-logo">
+            <a href="#"><i class="fa-solid fa-tree"></i>
+                <p>Forest</p>
+            </a>
+        </div>
+        <div class="footer-boxes">
+            <div class="footer-box aboutus">
+                <h3>O nas</h3>
+                <p>Historia</p>
+                <p>Parki</p>
+                <p>Opinie</p>
+            </div>
+            <div class="footer-box company">
+                <h3>Nasza firma</h3>
+                <p>Praca</p>
+                <p>Kadry</p>
+                <p>Zarząd</p>
+            </div>
+            <div class="footer-box documents">
+                <h3>Dokumenty</h3>
+                <p>Wnioski</p>
+                <p>Rezerwacje</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <p class="footer-text"> &copy; <span class="footer-year"></span> Forest Group Company Ltd.</p>
+</footer>
+    <script src="dist/js/main.min.js"></script>
+</body>
+
+</html>
