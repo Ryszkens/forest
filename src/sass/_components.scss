@@ -2,6 +2,7 @@
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 66px;
 	font-size: 62.5%;
 }
 
@@ -253,7 +254,7 @@ header {
 		}
 
 		.cards {
-			width: 80%;
+			width: 95%;
 			margin: 1em auto;
 
 			.card-box {
@@ -756,7 +757,7 @@ header {
 		display: flex;
 
 		.section-heading {
-			margin-top: 3.4em;
+			margin-top: 1.5em;
 			font-size: 3rem;
 		}
 
